@@ -1,0 +1,8 @@
+NAME           READY   STATUS    RESTARTS   AGE
+microservice   1/1     Running   0          11m
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
