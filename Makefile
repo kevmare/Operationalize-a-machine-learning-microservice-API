@@ -1,7 +1,7 @@
 ## The Makefile includes instructions on environment setup and lint tests
 # Create and activate a virtual environment
 # Install dependencies in requirements.txt
-# Dockerfile should pass hadolint
+# Dockerfile should pass hadolintf
 # app.py should pass pylint
 # (Optional) Build a simple integration test
 
