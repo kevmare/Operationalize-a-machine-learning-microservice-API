@@ -43,6 +43,43 @@ Setting up our environment
 * Create Flask app in Container
 * Run via kubectl
 
+### Commands
+1. Clone Repo: `git clone https://github.com/kevmare/Operationalize-a-machine-learning-microservice-API.git`
+2. Navigate to directory: `cd DevOps_Microservices/project-ml-microservice-kubernetes`
+3. Create a new Virtaul environment: `python3 -m venv ~/.devops` `source ~/.devops/bin/activate`
+4. Ensure make is installed: `install make`
+5. Install Hadolint:
+   ````
+       wget -O hadolint https://github.com/hadolint/hadolint/releases/download/v2.7.0/hadolint-Linux-x86_64
+       chmod +x hadolint
+       sudo mv hadolint /usr/local/bin/
+   ````
+6. Install kubectl:
+   ````
+       curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+       chmod +x kubectl
+       sudo mv kubectl /usr/local/bin/
+   ````
+7. Install minikube:
+   ````
+       curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+       chmod +x minikube
+       sudo mv minikube /usr/local/bin/
+   ````
+8. Run lint: `make lint`
+9. Run container: `./run_docker.sh`
+10. Make Prediction: `./make_prediction.sh`
+11. Upload Docker Image: `./upload_docker.sh`
+12. Configure Kubernetes for local: `minikube start`
+13. Deploy: `./run_kubernetes.sh`
+14. Push to Circleci:
+````
+       git add .
+       git commit -m "New commit"
+       git push
+
+````   
+
 ### File Contents
 ````
 * /.circlci : YML configuration file for running building pipeline.
@@ -58,4 +95,6 @@ Setting up our environment
 * run_docker.sh : File for running docker locally
 * run_kubernetes.sh : File to run the app in kubernetes
 * upload_docker.sh : File to upload the image to docker
-```
+````
+
+
